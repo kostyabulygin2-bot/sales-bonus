@@ -92,7 +92,6 @@ function analyzeSalesData(data, options) {
     const seller = sellerIndex[record.seller_id]; // Продавец
     // Увеличить общую сумму выручки всех продаж
     seller.sales_count++;
-    seller.revenue += record.total_amount;
     // Расчёт прибыли для каждого товара
     record.items.forEach((item) => {
       const product = productIndex[item.sku]; // Товар
