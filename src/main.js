@@ -46,10 +46,10 @@ function analyzeSalesData(data, options) {
   if (
     !data ||
     !Array.isArray(data.sellers) ||
-    !Array.isArray(data.products) ||
-    !Array.isArray(data.purchase_records) ||
     data.sellers.length === 0 ||
+    !Array.isArray(data.products) ||
     data.products.length === 0 ||
+    !Array.isArray(data.purchase_records) ||
     data.purchase_records.length === 0
   ) {
     throw new Error("Некорректные входные данные");
@@ -60,8 +60,6 @@ function analyzeSalesData(data, options) {
 
   if (
     typeof options !== "object" ||
-    !calculateRevenue ||
-    !calculateBonus ||
     typeof calculateRevenue !== "function" ||
     typeof calculateBonus !== "function"
   ) {
